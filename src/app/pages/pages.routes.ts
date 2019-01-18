@@ -3,6 +3,8 @@ import { PagesComponent } from './pages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProgressComponent } from './progress/progress.component';
 import { Graficas1Component } from './graficas1/graficas1.component';
+import { GraficoDonaComponent } from '../components/grafico-dona/grafico-dona.component';
+
 
 
 
@@ -13,6 +15,7 @@ const pagesRoutes: Routes = [
       {path: 'dashboard', component: DashboardComponent},
       {path: 'progress', component: ProgressComponent},
       {path: 'graficas1', component: Graficas1Component},
+      {path: 'graficasdona', component: GraficoDonaComponent},
       {path: '', redirectTo: '/dasboard', pathMatch: 'full'}
     ]
 }

@@ -1,0 +1,14 @@
+
+ <div> {{leyenda}} - {{progreso}} </div>
+<div class="input-group mb-3" >
+       
+    <div class="input-group-prepend btn btn-secondary">
+        <i class=" mdi mdi-minus" (click)="CambiarValor(-5)"></i>
+    </div>
+
+        <input #txtprogres type="number" class="form-control" placeholder="" name="progreso"  min="1" max="100" [(ngModel)]="progreso"  (ngModelChange)="onChanges($event)" aria-label="Example text with button addon" aria-describedby="button-addon1">
+
+    <div class="input-group-prepend btn btn-secondary">
+        <i class=" mdi mdi-plus" (click)="CambiarValor(+5)"></i>
+    </div>
+</div>
