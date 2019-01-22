@@ -4,8 +4,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProgressComponent } from './progress/progress.component';
 import { Graficas1Component } from './graficas1/graficas1.component';
 import { GraficoDonaComponent } from '../components/grafico-dona/grafico-dona.component';
-
-
+import { AccoutSettingsComponent } from './accout-settings/accout-settings.component';
 
 
 const pagesRoutes: Routes = [
@@ -15,8 +14,8 @@ const pagesRoutes: Routes = [
       {path: 'dashboard', component: DashboardComponent},
       {path: 'progress', component: ProgressComponent},
       {path: 'graficas1', component: Graficas1Component},
-      {path: 'graficasdona', component: GraficoDonaComponent},
-      {path: '', redirectTo: '/dasboard', pathMatch: 'full'}
+      {path: 'account-settings', component: AccoutSettingsComponent},
+      {path: '', redirectTo: '/dashboard', pathMatch: 'full'}
     ]
 }
 ];

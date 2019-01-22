@@ -7,11 +7,15 @@ import { APP_ROUTER } from './app-routing.module';
 // Modulos
 import { PageModules } from './pages/pages.module';
 
+// services
+import { ServiceModule } from './services/service.module';
+
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './login/register.component';
 import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -23,7 +27,10 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     APP_ROUTER,
     PageModules,
-    FormsModule
+    FormsModule,
+    ServiceModule,
+    CommonModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
