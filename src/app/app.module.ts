@@ -14,7 +14,7 @@ import { ServiceModule } from './services/service.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './login/register.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
 @NgModule({
@@ -28,6 +28,7 @@ import { CommonModule } from '@angular/common';
     APP_ROUTER,
     PageModules,
     FormsModule,
+    ReactiveFormsModule,
     ServiceModule,
     CommonModule
 
