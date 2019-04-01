@@ -90,10 +90,10 @@ export class RegisterComponent implements OnInit {
         this.forma.value.password
     );
 
-    this._usuarioService.crearUsuario(usuario)
-          .subscribe( resp => {
-              console.log(resp);
-              this.router.navigate(['/login']);
-          });
-    }
+    // this._usuarioService.crearUsuario(usuario)
+    //       .subscribe( resp => {
+    //           console.log(resp);
+    //           this.router.navigate(['/login']);
+    //       });
+     }
 }

@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { CanActivate, Router } from '@angular/router';
 import { UsuarioService } from '../usuario/usuario.service';
-import { routerNgProbeToken } from '@angular/router/src/router_module';
-
+ 
 
 
 @Injectable({
@@ -21,8 +20,9 @@ export class LoginGuardGuard implements CanActivate {
         return true;
      } else {
        this._router.navigate(['/login']);
-       console.log('bloqueado por e guard');
+       console.log('bloqueado por el guard');
        return false;
      }
+    return true;
   }
 }

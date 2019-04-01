@@ -1,3 +1,83 @@
-<p>
-  dashboard works!
-</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+    <section>
+      lista de paises 
+      <div *ngIf="!cargando" class="alert alert-warning text-center">
+        <strong>Cargando</strong>
+        <br>
+        <i class="fa fa-refresh fa-spin fa-2x"></i>
+        <br>
+        <span>Espere por favor </span>
+      </div>
+
+      <table class="table" *ngIf="cargando">
+        <thead>
+          <tr>
+            <th> # </th>
+            <th>Id</th>
+            <th>Razon Social</th>
+            <th>Nombre</th>
+            <th>Región</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of paises; let i = index">
+            <td> {{ i + 1  }}</td>
+            <td> {{ item?.pais_id}} </td>
+            <td> {{ item?.nombre}}  </td>
+            <td> {{ item?.abreviatura}}  </td>
+            <td> {{ item?.idioma.nombre }}  </td>
+          </tr>
+        </tbody>
+      </table>
+
+
+     
+    </section>
+    <br><br>
+    <section *ngIf="cargando">
+      <div class="col-md-12">
+        <form  action="" #formPais="ngForm">
+          <button class="padding" class="btn btn-info btn-lg  text-uppercase" type="submit" (click)="buscaPais(formPais)" >Buscar</button>
+          <input class="padding" [(ngModel)]="id" name="id" type="text" placeholder="Ingrese ID" required>
+          <input class="padding" [(ngModel)]="razonSocial" name="razonSocial" type="text" placeholder="Ingrese Razon social" >
+          <input class="padding" [(ngModel)]="nombreFantasia" name="nombreFantasia" (ngModelChange)="search()" type="text" placeholder="Ingrese Nombre" >
+        </form>
+
+      </div>
+    </section>
+
+    <section >
+        <table class="table">
+            <thead>
+              <tr>
+                <th> # </th>
+                <th>Id</th>
+                <th>Razon Social</th>
+                <th>Nombre</th>
+                <th>Región</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of filtroPaises | search: id : razonSocial : nombreFantasia; let i = index" >
+                <td> {{ i + 1 }}  </td>
+                <td> {{item?.cliente_id}} </td>
+                <td>  {{item?.razon_social}} </td>
+                <td> {{item?.nombre_fantasia}} </td>
+                <td> {{item?.region.nombre}} </td>
+              </tr>
+            </tbody>
+          </table>
+    </section>
+
+  
+</body>
+</html>

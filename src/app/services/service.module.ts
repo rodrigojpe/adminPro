@@ -8,6 +8,7 @@ import { SettingsService,
           } from './service.index';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginGuardGuard } from './guards/login-guard.guard';
+import { SubirArchivoService } from './subir-archivo/subir-archivo.service';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { LoginGuardGuard } from './guards/login-guard.guard';
     SharedService,
     SidebarService,
     UsuarioService,
-    LoginGuardGuard
+    LoginGuardGuard,
+    SubirArchivoService
   ]
 })
 export class ServiceModule { }

@@ -19,6 +19,10 @@ import { ChartsModule } from 'ng2-charts';
 import { AccoutSettingsComponent } from './accout-settings/accout-settings.component';
 import { PromesasComponent } from './promesas/promesas.component';
 import { RxjsComponent } from './rxjs.component/rxjs.component';
+// pipes Module
+import { ProfileComponent } from './profile/profile.component';
+import { CommonModule } from '@angular/common';
+import { SearchPipe } from '../pipes/search.pipe';
 
 
 
@@ -32,7 +36,9 @@ import { RxjsComponent } from './rxjs.component/rxjs.component';
         GraficoDonaComponent,
         AccoutSettingsComponent,
         PromesasComponent,
-        RxjsComponent
+        RxjsComponent,
+        ProfileComponent,
+        SearchPipe
     ],
     exports: [
         DashboardComponent,
@@ -40,10 +46,11 @@ import { RxjsComponent } from './rxjs.component/rxjs.component';
         Graficas1Component
     ],
     imports: [
+        CommonModule,
         SharedModule,
         PAGES_ROUTES,
         FormsModule,
-        ChartsModule
+        ChartsModule,
     ]
 
 })
